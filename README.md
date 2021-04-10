@@ -43,7 +43,7 @@ Examplary outcome for 15 points and 4 colors:
 ![](map_coloring.png)
 
 ## Einstein's problem
-Einstein problam/Zebra puzzle/Einstein's riddle description:  
+Einstein's problem/Zebra puzzle/Einstein's riddle description:  
 https://en.wikipedia.org/wiki/Zebra_Puzzle  
 
 Example of Einstein's problem is presented in *EinsteinTest.py* file.  
