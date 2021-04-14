@@ -1,17 +1,3 @@
-def _select_next_variable(variables):
-    '''can_be_chosen = []
-    for var in self.variables:
-        already_assigned = False
-        for node in solution:
-            if node[0] == var[0]:
-                already_assigned = True
-        if not already_assigned:
-            can_be_chosen.append(var)
-
-    return random.choice(can_be_chosen)'''
-    return variables[0]
-
-
 class Problem:
     def __init__(self):
         self.variables = []
@@ -23,6 +9,9 @@ class Problem:
         self.solutions = []
 
         self.arcs = []
+
+        self.variable_heuristic = 0
+        self.value_heuristic = 0
 
     def add_variable(self, variable, domain):
         self.variables.append((variable, domain))
@@ -42,7 +31,23 @@ class Problem:
     def solve_backtracking(self):
         self.solutions = []
 
-        self._set_next_node([], self.variables[:], _select_next_variable(self.variables[:]))
+        self._set_next_node([], self.variables[:],
+                            self._select_next_variable(self.variables[:], self.variable_heuristic))
+
+    def solve_forward_check(self):
+        self.solutions = []
+
+        variables = self.variables[:]
+        for variable in variables:
+            for value in variable[1][:]:
+                for constraint in self.single_constraints:
+                    if constraint[1] == variable[0]:
+                        if not constraint[0](value):
+                            variable[1].remove(value)
+
+        first_variable = self._select_next_variable(self.variables[:], self.variable_heuristic)
+
+        self._set_next_node_forward_check([], variables, first_variable)
 
     def ac3(self):
         variables = self.variables[:]
@@ -84,20 +89,19 @@ class Problem:
 
     def _set_next_node(self, solution, variables, variable):
         # print(solution)
-        for value in variable[1]:
+        variables.remove(variable)
+        for value in self._order_values(variables, variable, self.value_heuristic):
             node = (variable[0], value)
             sol = solution[:]
             variabs = variables[:]
-            variabs.remove(variable)
-
-            # TODO: Forward check tutaj
+            # variabs.remove(variable)
 
             if self._check_constraints(sol, node):
                 sol.append(node)
                 if len(sol) == len(self.variables):
                     self.solutions.append(sol)
                 else:
-                    new_variable = _select_next_variable(variabs)
+                    new_variable = self._select_next_variable(variabs, self.variable_heuristic)
                     self._set_next_node(sol, variabs, new_variable)
 
     def _check_constraints(self, solution, node):
@@ -119,28 +123,128 @@ class Problem:
             for second_node in solution:
                 if node[0] in constraint[1] and second_node[0] in constraint[1]:
                     if not constraint[0](node[1], second_node[1]):
-                        # print(f"constraint {node} elo {second_node}")
                         return False
 
         return True
 
-    def solve_forward_check(self):
-        pass
-
     def _set_next_node_forward_check(self, solution, variables, variable):
-        # print(solution)
-        for value in variable[1]:
+        variables.remove(variable)
+        for value in self._order_values(variables, variable, self.value_heuristic):
             node = (variable[0], value)
             sol = solution[:]
             variabs = variables[:]
-            variabs.remove(variable)
+            # variabs.remove(variable)
 
-            # TODO: Forward check tutaj
+            self._set_domains_forward_check(variables, node)
 
-            if self._check_constraints(sol, node):
-                sol.append(node)
-                if len(sol) == len(self.variables):
-                    self.solutions.append(sol)
-                else:
-                    new_variable = _select_next_variable(variabs)
-                    self._set_next_node(sol, variabs, new_variable)
+            sol.append(node)
+            if len(sol) == len(self.variables):
+                self.solutions.append(sol)
+            else:
+                new_variable = self._select_next_variable(variabs, self.variable_heuristic)
+                self._set_next_node(sol, variabs, new_variable)
+
+    def _set_domains_forward_check(self, variables, node):
+        for second_node in variables:
+            for value in second_node[1]:
+                value_can_be_used = True
+                for constraint in self.double_constraints:
+                    if second_node[0] == constraint[1][0] and node[0] == constraint[1][1]:
+                        if not constraint[0](value, node[1]):
+                            value_can_be_used = False
+                    elif node[0] == constraint[1][0] and second_node[0] == constraint[1][1]:
+                        if not constraint[0](node[1], value):
+                            value_can_be_used = False
+                if not value_can_be_used:
+                    second_node[1].remove(value)
+
+        for second_node in variables:
+            for value in second_node[1]:
+                value_can_be_used = True
+                for constraint in self.multiple_constraints:
+                    if node[0] in constraint[1] and second_node[0] in constraint[1]:
+                        if not constraint[0](node[1], value):
+                            value_can_be_used = False
+                if not value_can_be_used:
+                    second_node[1].remove(value)
+
+    def _select_next_variable(self, variables, heuristic=0):
+        # domyślne wybieranie - kolejnosc dodania zmiennych
+        if heuristic == 0:
+            return variables[0]
+
+        # najbardziej ograniczona zmienna
+        if heuristic == 1:
+            index = 0
+            length = len(variables[0][1])
+            for i in range(len(variables)):
+                if len(variables[i][1]) < length:
+                    index = i
+                    length = len(variables[i][1])
+            return variables[index]
+
+        # najbardziej ograniczająca zmienna
+        if heuristic == 2:
+            index = 0
+            constraints = 0
+            for i in range(len(variables)):
+                var_constraints = 0
+                for constr in self.single_constraints:
+                    if variables[i][0] == constr[1]:
+                        var_constraints += 1
+                for constr in self.double_constraints:
+                    if variables[i][0] in constr[1]:
+                        var_constraints += 1
+                for constr in self.multiple_constraints:
+                    if variables[i][0] in constr[1]:
+                        var_constraints += 1
+
+                if var_constraints > constraints:
+                    constraints = var_constraints
+                    index = i
+
+            return variables[index]
+
+    def _order_values(self, variables, variable, heuristic):
+        # domyślne wybieranie - kolejnosc dodania wartości
+        if heuristic == 0:
+            return variable[1]
+
+        # najmniej ograniczająca wartość
+        if heuristic == 1:
+            values = []
+            for value in variable[1]:
+                constrs = 0
+                for constr in self.single_constraints:
+                    if variable[0] == constr[1]:
+                        if not constr[0](value):
+                            constrs += 1
+
+                for constr in self.double_constraints:
+                    if variable[0] == constr[1][0]:
+                        for variable2 in variables:
+                            if variable2[0] == constr[1][1]:
+                                for value2 in variable2[1]:
+                                    if not constr[0](value, value2):
+                                        constrs += 1
+                    elif variable[0] == constr[1][1]:
+                        for variable2 in variables:
+                            if variable2[0] == constr[1][0]:
+                                for value2 in variable2[1]:
+                                    if not constr[0](value2, value):
+                                        constrs += 1
+
+                for constr in self.multiple_constraints:
+                    if variable[0] in constr[1]:
+                        for variable2 in variables:
+                            if variable2[0] in constr[1]:
+                                for value2 in variable2[1]:
+                                    if not constr[0](value, value2):
+                                        constrs += 1
+                values.append((value, constrs))
+
+            values = sorted(values, key=lambda a: a[1])
+            result = []
+            for val, num in values:
+                result.append(val)
+            return result
