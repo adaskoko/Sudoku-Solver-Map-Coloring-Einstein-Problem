@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d62a6436-591f-4abf-9bbf-f360bee8130b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d62a6436-591f-4abf-9bbf-f360bee8130b" name="Default Changelist" comment="Readme initial update">
+      <change afterPath="$PROJECT_DIR$/AC3Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.EinsteinTest">
+  <component name="RunManager" selected="Python.AC3Test">
+    <configuration name="AC3Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Cwiczenie2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AC3Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="EinsteinTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenie2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,27 +118,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Testowy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Cwiczenie2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testowy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Testowy2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenie2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.AC3Test" />
         <item itemvalue="Python.EinsteinTest" />
         <item itemvalue="Python.MapTest" />
         <item itemvalue="Python.SudokuSolver" />
         <item itemvalue="Python.Testowy2" />
-        <item itemvalue="Python.Testowy" />
       </list>
     </recent_temporary>
   </component>
@@ -160,39 +160,58 @@
       <option name="presentableId" value="Default" />
       <updated>1617730737570</updated>
     </task>
+    <task id="LOCAL-00001" summary="Readme initial update">
+      <created>1618055955247</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618055955247</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Readme initial update">
+      <created>1618055973286</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618055973287</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Readme initial update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme initial update" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="614" y="119" key="CommitChangelistDialog2" timestamp="1618055954497">
+    <state x="614" y="119" key="CommitChangelistDialog2" timestamp="1618056470018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="614" y="119" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055954497" />
-    <state width="1899" height="355" key="GridCell.Tab.0.bottom" timestamp="1618055914106">
+    <state x="614" y="119" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618056470018" />
+    <state width="1899" height="375" key="GridCell.Tab.0.bottom" timestamp="1618414255088">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055914106" />
+    <state width="1899" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618414255088" />
     <state width="1515" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="355" key="GridCell.Tab.0.center" timestamp="1618055914106">
+    <state width="1899" height="375" key="GridCell.Tab.0.center" timestamp="1618414255088">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="355" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055914106" />
+    <state width="1899" height="375" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618414255088" />
     <state width="1515" height="241" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="355" key="GridCell.Tab.0.left" timestamp="1618055914106">
+    <state width="1899" height="375" key="GridCell.Tab.0.left" timestamp="1618414255088">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="355" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055914106" />
+    <state width="1899" height="375" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618414255088" />
     <state width="1515" height="241" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="355" key="GridCell.Tab.0.right" timestamp="1618055914106">
+    <state width="1899" height="375" key="GridCell.Tab.0.right" timestamp="1618414255088">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="355" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055914106" />
+    <state width="1899" height="375" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618414255088" />
     <state width="1515" height="241" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
     <state width="1515" height="237" key="GridCell.Tab.1.bottom" timestamp="1617819553237">
@@ -215,11 +234,19 @@
       <screen x="-1920" y="9" width="1536" height="834" />
     </state>
     <state x="-1563" y="66" key="SettingsEditor/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617739592444" />
-    <state x="581" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1618053678674">
+    <state x="552" y="246" key="Vcs.Push.Dialog.v2" timestamp="1618055981824">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055981824" />
+    <state x="581" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1618412366630">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1617895986098" />
-    <state x="581" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618053678674" />
+    <state x="581" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618412366630" />
     <state x="-1455" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880096023" />
+    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618055985276">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055985276" />
   </component>
 </project>
