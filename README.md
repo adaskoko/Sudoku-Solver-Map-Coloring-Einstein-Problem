@@ -1,11 +1,10 @@
 # Sudoku, Map Coloring and Einstein-Problem Solver
 
-The following program contains backtracking algorithm able to solve 
-*sudokus*, *map coloring* problems and *Einstein's problem*.
+The following program contains backtracking and forward-check algorithms able to solve 
+*sudokus*, *map coloring* problems and *Einstein's problem*. AC-3 algorithm is also implemented.
 
-## Backtracking algorithm
-Proposed backtracking is a simple algorithm, based on recursion. 
-The algorithm can take multiple constraints, which are separated into three categories 
+## Backtracking and forward-check algorithms 
+The algorithms can take multiple constraints, which are separated into three categories 
 - single variable constraint
 - two variables dependency
 - multiple variables dependency
