@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62a6436-591f-4abf-9bbf-f360bee8130b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ForwardCheckEinstein.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForwardCheckMap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AC3Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/AC3Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSP.py" beforeDir="false" afterPath="$PROJECT_DIR$/CSP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ForwardCheckEinstein.py" beforeDir="false" afterPath="$PROJECT_DIR$/ForwardCheckEinstein.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ForwardCheckMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/ForwardCheckMap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SudokuSolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/SudokuSolver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.AC3Test">
+  <component name="RunManager" selected="Python.ForwardCheckMap">
     <configuration name="AC3Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenie2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MapTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="SudokuSolver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Cwiczenie2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MapTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SudokuSolver.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.AC3Test" />
         <item itemvalue="Python.ForwardCheckMap" />
+        <item itemvalue="Python.AC3Test" />
         <item itemvalue="Python.ForwardCheckEinstein" />
+        <item itemvalue="Python.SudokuSolver" />
         <item itemvalue="Python.EinsteinTest" />
-        <item itemvalue="Python.MapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -182,45 +184,61 @@
       <option name="project" value="LOCAL" />
       <updated>1618414283034</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="forward check, variable and value heuristics">
+      <created>1618421856899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618421856899</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Readme initial update" />
     <MESSAGE value="ac3" />
-    <option name="LAST_COMMIT_MESSAGE" value="ac3" />
+    <MESSAGE value="forward check, variable and value heuristics" />
+    <option name="LAST_COMMIT_MESSAGE" value="forward check, variable and value heuristics" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="614" y="119" key="CommitChangelistDialog2" timestamp="1618414281759">
+    <state x="614" y="119" key="CommitChangelistDialog2" timestamp="1618421856159">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="614" y="119" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618414281759" />
-    <state width="1899" height="289" key="GridCell.Tab.0.bottom" timestamp="1618421693720">
+    <state x="614" y="119" key="CommitChangelistDialog2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618421856159" />
+    <state x="739" y="267" key="FileChooserDialogImpl" timestamp="1619452592124">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="739" y="267" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619452592124" />
+    <state width="1899" height="316" key="GridCell.Tab.0.bottom" timestamp="1619093596754">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618421693720" />
+    <state width="1515" height="354" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834@-1920.0.1536.834" timestamp="1619025875948" />
+    <state width="1899" height="316" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619093596754" />
     <state width="1515" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="289" key="GridCell.Tab.0.center" timestamp="1618421693720">
+    <state width="1899" height="316" key="GridCell.Tab.0.center" timestamp="1619093596754">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="289" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618421693720" />
+    <state width="1515" height="354" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834@-1920.0.1536.834" timestamp="1619025875948" />
+    <state width="1899" height="316" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619093596754" />
     <state width="1515" height="241" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="289" key="GridCell.Tab.0.left" timestamp="1618421693719">
+    <state width="1899" height="316" key="GridCell.Tab.0.left" timestamp="1619093596753">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="289" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618421693719" />
+    <state width="1515" height="354" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834@-1920.0.1536.834" timestamp="1619025875948" />
+    <state width="1899" height="316" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619093596753" />
     <state width="1515" height="241" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
-    <state width="1899" height="289" key="GridCell.Tab.0.right" timestamp="1618421693720">
+    <state width="1899" height="316" key="GridCell.Tab.0.right" timestamp="1619093596754">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1515" height="294" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1617899635813" />
-    <state width="1899" height="289" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618421693720" />
+    <state width="1515" height="354" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834@-1920.0.1536.834" timestamp="1619025875948" />
+    <state width="1899" height="316" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619093596754" />
     <state width="1515" height="241" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880310769" />
     <state width="1899" height="402" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.9.1536.834@0.0.1920.1050" timestamp="1617906500877" />
     <state width="1515" height="237" key="GridCell.Tab.1.bottom" timestamp="1617819553237">
@@ -247,11 +265,12 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="246" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618055981824" />
-    <state x="581" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1618412366630">
+    <state x="581" y="303" key="com.intellij.ide.util.TipDialog" timestamp="1619452579927">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1617895986098" />
-    <state x="581" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1618412366630" />
+    <state x="-1455" y="241" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1536.834@-1920.0.1536.834" timestamp="1619075720614" />
+    <state x="581" y="303" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1619452579927" />
     <state x="-1455" y="250" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/-1920.9.1536.834@-1920.9.1536.834" timestamp="1617880096023" />
     <state x="769" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618055985276">
       <screen x="0" y="0" width="1920" height="1050" />

@@ -1,4 +1,4 @@
-from Backtracking import *
+from CSP import *
 import time
 
 problem = Problem()
@@ -83,7 +83,8 @@ for row in squares:
 
 
 start = time.time()
-problem.solve()
+problem.variable_heuristic = 1
+problem.solve_forward_check()
 end = time.time()
 
 print(f"czas: {end - start}")

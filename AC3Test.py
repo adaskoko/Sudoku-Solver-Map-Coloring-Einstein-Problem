@@ -10,9 +10,11 @@ variables = country + color + tobacco + drink + breed
 house = [1, 2, 3, 4, 5]
 
 problem = Problem()
+problem2 = Problem()
 
 for variable in variables:
     problem.add_variable(variable, house[:])
+    problem2.add_variable(variable, house[:])
 
 single_constraints = [
     (lambda a: a == 1, "Norweg"),
@@ -75,32 +77,57 @@ multiple_constraints = [
 
 for constraint, domain in single_constraints:
     problem.add_single_constraint(constraint, domain)
+    problem2.add_single_constraint(constraint, domain)
     # add arcs
     problem.add_arc(constraint, domain)
+    problem2.add_arc(constraint, domain)
 
 for constraint, domain in double_constraints:
     problem.add_double_constraint(constraint, domain)
+    problem2.add_double_constraint(constraint, domain)
 
 for constraint, domain in multiple_constraints:
     problem.add_multiple_constraint(constraint, domain)
+    problem2.add_multiple_constraint(constraint, domain)
     # add arcs
     for val1 in domain:
         for val2 in domain:
             if val1 != val2:
                 problem.add_arc(constraint, val1, val2)
+                problem2.add_arc(constraint, val1, val2)
                 problem.add_arc(constraint, val2, val1)
+                problem2.add_arc(constraint, val2, val1)
 
 # add arcs
 for function, var1, var2 in double_arcs:
     problem.add_arc(function, var1, var2)
+    problem2.add_arc(function, var1, var2)
 
-problem.ac3()
-print(problem.variables)
-problem.solve_backtracking()
-print(problem.solutions)
+start = time.time()
 
-for i in range(1, 6):
+problem.variable_heuristic = 0
+problem.value_heuristic = 0
+problem.solve_forward_check()
+# print(problem.solutions)
+
+end = time.time()
+print(f"czas: {end - start}\nnodes: {problem.nodes_visited}")
+print(f"czas pierwszego: {problem.end_time - problem.start_time}\nnodes: {problem.nodes_to_first_sol}")
+
+start = time.time()
+
+problem2.ac3()
+problem2.variable_heuristic = 0
+problem2.value_heuristic = 0
+problem2.solve_forward_check()
+# print(problem.solutions)
+
+end = time.time()
+print(f"ac3\nczas: {end - start}\nnodes: {problem2.nodes_visited}")
+print(f"czas pierwszego: {problem2.end_time - problem2.start_time}\nnodes: {problem2.nodes_to_first_sol}")
+
+'''for i in range(1, 6):
     print(f"\ndomek {i}:")
     for var in problem.solutions[0]:
         if var[1] == i:
-            print(var[0])
+            print(var[0])'''

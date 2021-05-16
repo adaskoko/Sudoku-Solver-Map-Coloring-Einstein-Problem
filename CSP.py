@@ -1,3 +1,6 @@
+import time
+
+
 class Problem:
     def __init__(self):
         self.variables = []
@@ -12,6 +15,11 @@ class Problem:
 
         self.variable_heuristic = 0
         self.value_heuristic = 0
+
+        self.nodes_visited = 0
+        self.nodes_to_first_sol = 0
+        self.start_time = None
+        self.end_time = None
 
     def add_variable(self, variable, domain):
         self.variables.append((variable, domain))
@@ -31,11 +39,15 @@ class Problem:
     def solve_backtracking(self):
         self.solutions = []
 
+        self.start_time = time.time()
+
         self._set_next_node([], self.variables[:],
                             self._select_next_variable(self.variables[:], self.variable_heuristic))
 
     def solve_forward_check(self):
         self.solutions = []
+
+        self.start_time = time.time()
 
         variables = self.variables[:]
         for variable in variables:
@@ -96,10 +108,16 @@ class Problem:
             variabs = variables[:]
             # variabs.remove(variable)
 
+            self.nodes_visited += 1
+            if self.end_time is None:
+                self.nodes_to_first_sol += 1
+
             if self._check_constraints(sol, node):
                 sol.append(node)
                 if len(sol) == len(self.variables):
                     self.solutions.append(sol)
+                    if self.end_time is None:
+                        self.end_time = time.time()
                 else:
                     new_variable = self._select_next_variable(variabs, self.variable_heuristic)
                     self._set_next_node(sol, variabs, new_variable)
@@ -135,11 +153,18 @@ class Problem:
             variabs = variables[:]
             # variabs.remove(variable)
 
+            self.nodes_visited += 1
+            if self.end_time is None:
+                self.nodes_to_first_sol += 1
+
             self._set_domains_forward_check(variables, node)
 
             sol.append(node)
             if len(sol) == len(self.variables):
                 self.solutions.append(sol)
+                if self.end_time is None:
+                    self.end_time = time.time()
+
             else:
                 new_variable = self._select_next_variable(variabs, self.variable_heuristic)
                 self._set_next_node(sol, variabs, new_variable)
